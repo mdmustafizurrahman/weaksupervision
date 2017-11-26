@@ -118,3 +118,8 @@ data_unlabeled_tfidf = data_unlabeled_tfidf.toarray()
 print data_unlabeled_tfidf.shape
 
 y_pred_unlabeled = model.predict(data_unlabeled_tfidf)
+print type(y_pred_unlabeled)
+#y_pred_unlabeled = np.asarray(y_pred_unlabeled,dtype=np.int32)
+y_pred_unlabeled = y_pred_unlabeled.astype(int)
+print type(y_pred_unlabeled)
+np.savetxt('test.out', y_pred_unlabeled, delimiter=',')

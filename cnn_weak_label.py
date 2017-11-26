@@ -1,5 +1,9 @@
-# author - Richard Liao
-# Dec 26 2016
+'''
+import theano
+theano.config.device = 'gpu'
+theano.config.floatX = 'float32'
+'''
+
 import numpy as np
 import pandas as pd
 import cPickle
@@ -50,42 +54,58 @@ for idx in range(data_train.review.shape[0]):
     texts.append(clean_str(text.get_text().encode('ascii', 'ignore')))
     labels.append(data_train.sentiment[idx])
 
+
+data_unlabeled = pd.read_csv('/media/nahid/Windows8_OS/unlabeledTrainData/unlabeledTrainData.tsv', sep='\t')
+print data_unlabeled.shape
+texts_unlabeled = []
+
+for idx in range(data_unlabeled.review.shape[0]):
+    text = BeautifulSoup(data_unlabeled.review[idx])
+    texts_unlabeled.append(clean_str(text.get_text().encode('ascii','ignore')))
+
+weak_labels = np.loadtxt("test.out")
+weak_labels = weak_labels.tolist()
+print "type(weak_label):", type(weak_labels)
+
 tokenizer = Tokenizer(nb_words=MAX_NB_WORDS)
-tokenizer.fit_on_texts(texts)
-sequences = tokenizer.texts_to_sequences(texts)
+tokenizer.fit_on_texts(texts + texts_unlabeled)
+sequences = tokenizer.texts_to_sequences(texts + texts_unlabeled)
 
 word_index = tokenizer.word_index
 print('Found %s unique tokens.' % len(word_index))
 
 data = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
 
-labels = to_categorical(np.asarray(labels))
+labels = to_categorical(np.asarray(labels+weak_labels).astype(int))
 print('Shape of data tensor:', data.shape)
 print('Shape of label tensor:', labels.shape)
 
 print "type(data.shape[0]:)", type(data.shape)
 
-indices = np.arange(data.shape[0])
+indices = np.arange(25000)
 np.random.shuffle(indices)
-data = data[indices]
-labels = labels[indices]
-nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
+strong_data = data[indices]
+strong_labels = labels[indices]
+nb_validation_samples = int(VALIDATION_SPLIT * 25000)
 
-x_train = data[:-nb_validation_samples]
-y_train = labels[:-nb_validation_samples]
-x_val = data[-nb_validation_samples:]
-y_val = labels[-nb_validation_samples:]
+x_train = strong_data[:-nb_validation_samples]
+y_train = strong_labels[:-nb_validation_samples]
+x_val = strong_data[-nb_validation_samples:]
+y_val = strong_labels[-nb_validation_samples:]
 
-print "type(x_train):", type(x_train)
-X_train = x_train.tolist() + x_val.tolist()
-print "type(X_train):", type(X_train)
-print "Shape: X-train:", len(X_train)
+x_weak_train = data[25000:]
+y_weak_train = labels[25000:]
+
+X_train = x_train.tolist() + x_weak_train.tolist()
 X_train = np.asarray(X_train)
 print "type(X_train):", type(X_train)
 print "Shape: X-train:", X_train.shape
+Y_train = y_train.tolist() + y_weak_train.tolist()
+Y_train = np.asarray(Y_train)
+print "type(Y_train):", type(Y_train)
+print "Shape: Y-train:", Y_train.shape
 
 
-exit(1)
 
 print('Number of positive and negative reviews in traing and validation set ')
 print y_train.sum(axis=0)
@@ -135,8 +155,8 @@ model.compile(loss='categorical_crossentropy',
 
 print("model fitting - simplified convolutional neural network")
 model.summary()
-model.fit(x_train, y_train, validation_data=(x_val, y_val),
-          nb_epoch=10, batch_size=128)
+model.fit(X_train, Y_train, validation_data=(x_val, y_val),
+          nb_epoch=5, batch_size=128)
 
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
 for word, i in word_index.items():
@@ -181,3 +201,9 @@ print("model fitting - more complex convolutional neural network")
 model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
           nb_epoch=20, batch_size=50)
+
+
+
+
+
+
