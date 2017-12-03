@@ -138,6 +138,8 @@ model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
           nb_epoch=10, batch_size=128)
 
+
+'''
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
 for word, i in word_index.items():
     embedding_vector = embeddings_index.get(word)
@@ -181,3 +183,4 @@ print("model fitting - more complex convolutional neural network")
 model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
           nb_epoch=20, batch_size=50)
+'''
