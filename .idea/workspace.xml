@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="477c58e4-4726-45b3-9079-5df7c4e8b764" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plot.py" afterPath="$PROJECT_DIR$/plot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/selfTrainlogit.py" afterPath="$PROJECT_DIR$/selfTrainlogit.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selfTrainlogit.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="selfTrainlogit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="91" column="18" lean-forward="false" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+            <state relative-caret-position="-1455">
+              <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
               <folding>
                 <element signature="e#38#56#0" expanded="true" />
               </folding>
@@ -41,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selfTrainCNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="selfTrainCNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selfTrainCNN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-345">
@@ -54,8 +53,8 @@
       <file leaf-file-name="activeSelfTrainCNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3429">
-              <caret line="254" column="41" lean-forward="false" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="41" />
+            <state relative-caret-position="339">
+              <caret line="222" column="0" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="222" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,9 +149,9 @@
         <option value="$PROJECT_DIR$/cnn_weak_label.py" />
         <option value="$PROJECT_DIR$/cnn.py" />
         <option value="$PROJECT_DIR$/selfTrainCNN.py" />
-        <option value="$PROJECT_DIR$/selfTrainlogit.py" />
         <option value="$PROJECT_DIR$/plot.py" />
         <option value="$PROJECT_DIR$/activeSelfTrainCNN.py" />
+        <option value="$PROJECT_DIR$/selfTrainlogit.py" />
       </list>
     </option>
   </component>
@@ -204,7 +203,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.activeSelfTrainCNN">
+  <component name="RunManager" selected="Python.selfTrainlogit">
     <configuration default="false" name="logit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -433,9 +432,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
-        <item index="1" class="java.lang.String" itemvalue="Python.plot" />
-        <item index="2" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
+        <item index="0" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
+        <item index="1" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
+        <item index="2" class="java.lang.String" itemvalue="Python.plot" />
         <item index="3" class="java.lang.String" itemvalue="Python.logit" />
         <item index="4" class="java.lang.String" itemvalue="Python.selfTrainCNN" />
       </list>
@@ -921,16 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="91" column="18" lean-forward="false" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-          <folding>
-            <element signature="e#38#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -941,19 +930,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3429">
-          <caret line="254" column="41" lean-forward="false" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/selfTrainCNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
           <caret line="169" column="44" lean-forward="false" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="222" column="0" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="222" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1455">
+          <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="e#38#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -39,6 +39,8 @@ MAX_SEQUENCE_LENGTH = 1000
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
+number_of_replica = 3
+increment_size = 500
 
 def clean_str(string):
     """
@@ -89,14 +91,23 @@ y_train = label[:-nb_validation_samples]
 x_val = data[-nb_validation_samples:]
 y_val = label[-nb_validation_samples:]
 
-increment_size = 500
+
 x_train_incremental = x_train[:increment_size]
 y_train_incremental = y_train[:increment_size]
 model = LogisticRegression()
 model.fit(x_train_incremental, y_train_incremental)
 
-current_size = increment_size
+
 s = ""
+
+x_train_incremental = x_train_incremental.tolist()
+initial_len = len(x_train_incremental)
+for replicate in xrange(0, number_of_replica - 1):
+    for index in xrange(0, initial_len):
+        x_train_incremental.append(x_train_incremental[index])
+        y_train_incremental.append(y_train_incremental[index])
+
+current_size = initial_len
 
 while current_size <= len(y_train) - increment_size:
     print "train size", len(y_train_incremental)
@@ -109,13 +120,20 @@ while current_size <= len(y_train) - increment_size:
     print s
 
     print "Logistic Regression - Accuracy:", acc, "f1score", f1score
-    current_size = len(y_train_incremental)
+    current_size = len(y_train_incremental)  -  (number_of_replica - 1)*initial_len
     if current_size == len(y_train):
         break
-    y_pred_incremental = model.predict(x_train[current_size:current_size+increment_size])
+
+
+    x_train_next_batch = x_train[current_size:current_size+increment_size]
+
+    for train_x in x_train_next_batch:
+        x_train_incremental.append(train_x)
+
+    y_pred_incremental = model.predict(x_train_next_batch)
     for y_pred_i in y_pred_incremental:
         y_train_incremental.append(y_pred_i)
-    x_train_incremental = x_train[:current_size+increment_size]
+
     model = LogisticRegression()
     model.fit(x_train_incremental, y_train_incremental)
     current_size = current_size + increment_size
@@ -130,7 +148,7 @@ s= s+str(acc)+","
 
 print s
 
-text_file = open("result_Logit_"+ str(increment_size) + ".txt", "w")
+text_file = open("result_Logit_batch_"+ str(increment_size)+"_replica_"+str(number_of_replica) + ".txt", "w")
 text_file.write(s)
 text_file.close()
 
