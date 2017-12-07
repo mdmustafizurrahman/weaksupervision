@@ -1,4 +1,4 @@
-f = open("result_CNN.txt")
+f = open("result_Logit_500.txt")
 print f
 tmplist = []
 for lines in f:

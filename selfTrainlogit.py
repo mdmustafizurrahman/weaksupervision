@@ -89,7 +89,7 @@ y_train = label[:-nb_validation_samples]
 x_val = data[-nb_validation_samples:]
 y_val = label[-nb_validation_samples:]
 
-increment_size = 1000
+increment_size = 500
 x_train_incremental = x_train[:increment_size]
 y_train_incremental = y_train[:increment_size]
 model = LogisticRegression()
@@ -130,7 +130,7 @@ s= s+str(acc)+","
 
 print s
 
-text_file = open("result_Logit.txt", "w")
+text_file = open("result_Logit_"+ str(increment_size) + ".txt", "w")
 text_file.write(s)
 text_file.close()
 
