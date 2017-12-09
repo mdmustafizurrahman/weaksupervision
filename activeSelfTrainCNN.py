@@ -167,7 +167,6 @@ x_train_incremental = x_train[:increment_size]
 y_train_incremental = y_train[:increment_size]
 
 x_train_list = [] # keep the index of the X which is added in the train set
-
 for index in xrange(0, increment_size):
     x_train_list.append(index)
 
