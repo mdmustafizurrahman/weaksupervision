@@ -1,32 +1,20 @@
-# author - Richard Liao
-# Dec 26 2016
+# author - Md Mustafizur Rahman
+# Dec 08, 2017
 import numpy as np
 import pandas as pd
-import cPickle
-from collections import defaultdict
 import re
 
 from bs4 import BeautifulSoup
-import sys
-
-import sys
 import os
-from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import matplotlib.pyplot as plt
 from sklearn.metrics import f1_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
 from sklearn.linear_model import LogisticRegression
-from sklearn import svm
-import collections
 import Queue
 from math import log
 import pickle
 import time
+import sys
 
 class relevance(object):
     def __init__(self, priority, index):
@@ -37,32 +25,36 @@ class relevance(object):
         return -cmp(self.priority, other.priority)
 
 
-os.environ['KERAS_BACKEND']='theano'
-
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils.np_utils import to_categorical
-
-from keras.layers import Embedding
-from keras.layers import Dense, Input, Flatten
-from keras.layers import Conv1D, MaxPooling1D, Embedding, Merge, Dropout
-from keras.models import Model
-
-MAX_SEQUENCE_LENGTH = 1000
-MAX_NB_WORDS = 20000
-EMBEDDING_DIM = 100
-VALIDATION_SPLIT = 0.2
-
-seed_size = 100
+'''
+active_sampling = True
 number_of_replica = 10
-increment_size = 500
-active_sampling = False
+seed_size = 100
+increment_size = 50
+'''
+
+active_sampling = True if sys.argv[1] == "True" else False
+number_of_replica = int(sys.argv[2])
+seed_size = int(sys.argv[3])
+increment_size = int(sys.argv[4])
+
+print active_sampling, str(number_of_replica), str(seed_size), str(increment_size)
+
+
 classifier_type = 1
 
 classifier_name = "LR"
 pre_loaded = True
 sampling_type = ""
 base_address = "/media/nahid/Windows8_OS/data2/"
+result_address = base_address + "result/"
+
+os.environ['KERAS_BACKEND']='theano'
+MAX_SEQUENCE_LENGTH = 1000
+MAX_NB_WORDS = 20000
+EMBEDDING_DIM = 100
+VALIDATION_SPLIT = 0.2
+
+
 
 if int(classifier_type) == 1:
     classifier_name = "LR"
@@ -125,14 +117,6 @@ if pre_loaded == False:
     x_train = data[:5000]
     y_train = label[:5000]
 
-    '''
-    np.savetxt("x_train.txt", x_train)
-    np.savetxt("y_train.txt", y_train)
-
-    np.savetxt("x_val.txt", x_val)
-    np.savetxt("y_val.txt", y_val)
-    '''
-
     output = open(base_address+"x_train.txt", 'wb')
     pickle.dump(x_train, output)
     output.close()
@@ -153,14 +137,6 @@ if pre_loaded == False:
 
 else:
     print "Pre-loading is Active"
-    '''
-    x_train = np.loadtxt("x_train.txt")
-    y_train = np.loadtxt("y_train.txt")
-
-    x_val = np.loadtxt("x_val.txt")
-    y_val = np.loadtxt("y_val.txt")
-    '''
-
     start_time = time.time()
     input = open(base_address+"x_train.txt", 'rb')
     x_train = pickle.load(input)
@@ -193,10 +169,9 @@ model.fit(x_train_incremental, y_train_incremental)
 
 s = ""
 x_train_incremental = x_train_incremental.tolist()
-#y_train_incremental = y_train_incremental.tolist()
 
 x_train_list = [] # keep the index of the X which is added in the train set
-for index in xrange(0, increment_size):
+for index in xrange(0, seed_size):
     x_train_list.append(index)
 
 initial_len = len(x_train_incremental)
@@ -246,10 +221,6 @@ while current_size <= len(y_train) - increment_size:
                 queue.put(relevance(entropy, index))
                 # queue.put(relevance(y_prob[1], index))
 
-
-        #y_train_incremental = y_train_incremental.tolist()
-        #x_train_incremental = x_train_incremental.tolist()
-
         counter = 0
         while not queue.empty():
             if counter == increment_size:
@@ -275,7 +246,7 @@ s= s+str(acc)+","
 
 print s
 
-text_file = open("classifier_" +classifier_name+ "_selection_"+ sampling_type +"_seed_"+ str(seed_size)+ "_batch_"+str(increment_size)+"_replica_"+str(number_of_replica) + ".txt", "w")
+text_file = open(result_address+"classifier_" +classifier_name+ "_selection_"+ sampling_type +"_seed_"+ str(seed_size)+ "_batch_"+str(increment_size)+"_replica_"+str(number_of_replica) + ".txt", "w")
 text_file.write(s)
 text_file.close()
 

@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="477c58e4-4726-45b3-9079-5df7c4e8b764" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/batch_generator.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_seed_100_batch_100_replica_20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_seed_100_batch_300_replica_20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Active_seed_100_batch_300_replica_20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Active_seed_100_batch_300_replica_20_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Active_seed_100_batch_500_replica_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Active_seed_100_batch_500_replica_10.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Active_seed_100_batch_500_replica_20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier_LR_selection_Random_seed_100_batch_500_replica_10.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeSelfTrainCNN.py" afterPath="$PROJECT_DIR$/activeSelfTrainCNN.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/selfTrainlogit.py" afterPath="$PROJECT_DIR$/selfTrainlogit.py" />
@@ -19,11 +28,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="selfTrainlogit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
+      <file leaf-file-name="activeSelfTrainCNN_1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2201">
-              <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+            <state relative-caret-position="840">
+              <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
               <folding>
                 <element signature="e#38#56#0" expanded="true" />
               </folding>
@@ -31,85 +40,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selfTrainCNN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/selfTrainCNN.py">
+      <file leaf-file-name="batch_generator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/batch_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-647">
-              <caret line="169" column="44" lean-forward="false" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="51" />
+            <state relative-caret-position="390">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activeSelfTrainCNN.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
+      <file leaf-file-name="batch_generator_CNN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/batch_generator_CNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="244" column="21" lean-forward="false" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="15" column="182" lean-forward="false" selection-start-line="15" selection-start-column="182" selection-end-line="15" selection-end-column="182" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic_distribution_real_cost_command_line.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../parser/topic_distribution_real_cost_command_line.py">
+      <file leaf-file-name="selfTrainlogit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25590">
-              <caret line="1722" column="0" lean-forward="false" selection-start-line="1716" selection-start-column="4" selection-end-line="1722" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="26" />
+            <state relative-caret-position="1213">
+              <caret line="249" column="0" lean-forward="true" selection-start-line="248" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
               <folding>
-                <element signature="e#275#306#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result_Logit_100.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result_Logit_100.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1081" lean-forward="false" selection-start-line="0" selection-start-column="1081" selection-end-line="0" selection-end-column="1081" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vary_final_f-1collector_one_row.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../parser/vary_final_f-1collector_one_row.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="74" lean-forward="false" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result_Logit.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result_Logit.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cnn_weak_label.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cnn_weak_label.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-              <folding>
-                <element signature="e#85#103#0" expanded="true" />
+                <element signature="e#47#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,6 +87,7 @@
       <find>exit</find>
       <find>increment_size</find>
       <find>arg</find>
+      <find>self</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,8 +101,11 @@
         <option value="$PROJECT_DIR$/cnn.py" />
         <option value="$PROJECT_DIR$/selfTrainCNN.py" />
         <option value="$PROJECT_DIR$/plot.py" />
+        <option value="$PROJECT_DIR$/batch_generator.py" />
         <option value="$PROJECT_DIR$/activeSelfTrainCNN.py" />
         <option value="$PROJECT_DIR$/selfTrainlogit.py" />
+        <option value="$PROJECT_DIR$/activeSelfTrainCNN_1.py" />
+        <option value="$PROJECT_DIR$/batch_generator_CNN.py" />
       </list>
     </option>
   </component>
@@ -196,24 +157,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.selfTrainlogit">
-    <configuration default="false" name="logit" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="weaksupervision" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logit.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.batch_generator_CNN">
     <configuration default="false" name="selfTrainlogit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -231,40 +175,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="selfTrainCNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="weaksupervision" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selfTrainCNN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="weaksupervision" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="activeSelfTrainCNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,6 +188,57 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="weaksupervision" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/activeSelfTrainCNN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="batch_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="weaksupervision" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/batch_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="activeSelfTrainCNN_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="weaksupervision" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/activeSelfTrainCNN_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="batch_generator_CNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="weaksupervision" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/batch_generator_CNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -417,19 +378,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.logit" />
-      <item index="1" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
-      <item index="2" class="java.lang.String" itemvalue="Python.selfTrainCNN" />
-      <item index="3" class="java.lang.String" itemvalue="Python.plot" />
-      <item index="4" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
+      <item index="0" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
+      <item index="1" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
+      <item index="2" class="java.lang.String" itemvalue="Python.batch_generator" />
+      <item index="3" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN_1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.batch_generator_CNN" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
-        <item index="1" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
-        <item index="2" class="java.lang.String" itemvalue="Python.plot" />
-        <item index="3" class="java.lang.String" itemvalue="Python.logit" />
-        <item index="4" class="java.lang.String" itemvalue="Python.selfTrainCNN" />
+        <item index="0" class="java.lang.String" itemvalue="Python.batch_generator_CNN" />
+        <item index="1" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN_1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.batch_generator" />
+        <item index="3" class="java.lang.String" itemvalue="Python.selfTrainlogit" />
+        <item index="4" class="java.lang.String" itemvalue="Python.activeSelfTrainCNN" />
       </list>
     </recent_temporary>
   </component>
@@ -448,14 +409,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3791531" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32833958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32833958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -484,31 +445,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/result_Logit.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cnn_weak_label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="60" column="48" lean-forward="false" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weak-CNN.o752359">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75315">
@@ -522,7 +458,7 @@
         <state relative-caret-position="1575">
           <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
-            <element signature="e#38#56#0" expanded="true" />
+            <element signature="e#47#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -555,7 +491,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#275#306#0" expanded="true" />
+            <element signature="e#275#306#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,7 +517,7 @@
         <state relative-caret-position="150">
           <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
           <folding>
-            <element signature="e#85#103#0" expanded="true" />
+            <element signature="e#85#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,7 +542,7 @@
         <state relative-caret-position="1260">
           <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
-            <element signature="e#38#56#0" expanded="true" />
+            <element signature="e#47#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,7 +590,7 @@
         <state relative-caret-position="1260">
           <caret line="105" column="43" lean-forward="false" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
-            <element signature="e#38#56#0" expanded="true" />
+            <element signature="e#47#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,7 +629,7 @@
         <state relative-caret-position="120">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="38" />
           <folding>
-            <element signature="e#85#103#0" expanded="true" />
+            <element signature="e#85#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,7 +653,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#85#103#0" expanded="true" />
+            <element signature="e#85#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,7 +677,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#85#103#0" expanded="true" />
+            <element signature="e#85#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,7 +766,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="26" />
           <folding>
-            <element signature="e#275#306#0" expanded="true" />
+            <element signature="e#275#306#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -864,7 +800,7 @@
         <state relative-caret-position="150">
           <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
           <folding>
-            <element signature="e#85#103#0" expanded="true" />
+            <element signature="e#85#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,20 +813,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-465">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/selfTrainlogit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2201">
-          <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="1213">
+          <caret line="249" column="0" lean-forward="true" selection-start-line="248" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
           <folding>
             <element signature="e#38#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activeSelfTrainCNN.py">
+    <entry file="file://$PROJECT_DIR$/batch_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="244" column="21" lean-forward="false" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="21" />
+        <state relative-caret-position="390">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/batch_generator_CNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="182" lean-forward="false" selection-start-line="15" selection-start-column="182" selection-end-line="15" selection-end-column="182" />
           <folding />
         </state>
       </provider>

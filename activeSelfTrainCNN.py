@@ -23,6 +23,8 @@ from keras.layers import Conv1D, MaxPooling1D, Embedding, Merge, Dropout
 from keras.models import Model
 import Queue
 from math import log
+from numpy import argmax
+
 #from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 #from sklearn.metrics import f1_score
@@ -174,7 +176,7 @@ model.fit(x_train_incremental, y_train_incremental, epochs=NUMBER_OF_EPOCHS, bat
 
 current_size = increment_size
 
-from numpy import argmax
+
 
 y_val_categorical = y_val
 y_val = []
