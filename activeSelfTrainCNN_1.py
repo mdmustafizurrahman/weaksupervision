@@ -28,17 +28,18 @@ import pickle
 import time
 from copy import deepcopy
 
+'''
 active_sampling = False
-number_of_replica = 10
-seed_size = 100
-increment_size = 1000
+number_of_replica = 1
+seed_size = 500
+increment_size = 100
 '''
 
 active_sampling = True if sys.argv[1] == "True" else False
 number_of_replica = int(sys.argv[2])
 seed_size = int(sys.argv[3])
 increment_size = int(sys.argv[4])
-'''
+
 print active_sampling, str(number_of_replica), str(seed_size), str(increment_size)
 
 
@@ -54,8 +55,12 @@ MAX_SEQUENCE_LENGTH = 1000
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
-NUMBER_OF_EPOCHS = 10
+NUMBER_OF_EPOCHS = 1
 
+if active_sampling == False:
+    sampling_type = "Random"
+else:
+    sampling_type = "Active"
 
 class relevance(object):
     def __init__(self, priority, index):
@@ -235,7 +240,7 @@ y_train_incremental = y_train[:seed_size]
 
 print "seed sum:", y_train_incremental.sum(axis = 0)
 
-model.fit(x_train_incremental, y_train_incremental, epochs=NUMBER_OF_EPOCHS, batch_size=128)
+model.fit(x_train_incremental, y_train_incremental, nb_epoch=NUMBER_OF_EPOCHS, batch_size=128)
 
 x_train_list = [] # keep the index of the X which is added in the train set
 for index in xrange(0, seed_size):
@@ -280,6 +285,7 @@ while current_size <= len(y_train) - increment_size:
 
 
     if active_sampling == False: # random sampling
+        print "Random Sampling"
         x_train_next_batch = x_train[current_size:current_size+increment_size]
 
         for train_x in x_train_next_batch:
@@ -306,7 +312,7 @@ while current_size <= len(y_train) - increment_size:
         y_predicted_list = {}
         queueSize = len(x_train) - len(x_train_list)
         queue = Queue.PriorityQueue(queueSize)
-
+        print "Active Sampling"
         for index in xrange(0, len(x_train)):
             if index not in x_train_list:
                 y_prob = model.predict(np.array(x_train[index]).reshape(1, -1))[0]
@@ -320,8 +326,14 @@ while current_size <= len(y_train) - increment_size:
                 y_pred_i[min_index] = 0
                 #print "y_pred_i", y_pred_i, "y_prob:", y_prob
                 y_predicted_list[index] = y_pred_i
-                entropy = (-1) * (y_prob[0] * log(y_prob[0], 2) + y_prob[1] * log(y_prob[1], 2))
-                queue.put(relevance(entropy, index))
+                #entropy = (-1) * (y_prob[0] * log(y_prob[0], 2) + y_prob[1] * log(y_prob[1], 2))
+                max = 0.0
+                # most confident
+                if y_prob[0]> y_prob[1]:
+                    max = y_prob[0]
+                else:
+                    max = y_prob[1]
+                queue.put(relevance(max, index))
                 #queue.put(relevance(y_prob[1], index))
 
         counter = 0
