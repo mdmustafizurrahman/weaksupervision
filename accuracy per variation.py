@@ -58,6 +58,7 @@ for sample in sampling_set:
 
                 y_val = []
                 x_val = []
+
                 for val in values:
                     print val
                     if val == "":
@@ -77,7 +78,36 @@ for sample in sampling_set:
                 plt.plot(x_val,y_val, '-b', marker='^', label='LR, AUC:' + str(auc_LR)[:4],
                          linewidth=2.0)
 
-                #plt.plot(x_labels_set, protocol_result['SAL'], '-r', marker='o', label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
+                #plt.plot(x_val, y_val, '-b', marker='^', label='LR', linewidth=2.0)
+
+
+                if (len(replica_set) != 3):
+                    predictionResult = "/media/nahid/Windows8_OS/data_CNN/result/" + "classifier_" + "CNN" + "_selection_" +  "_seed_" + str(
+                        seed) + "_batch_" + str(batch) + "_replica_" + str(replica) + ".txt"
+                    f = open(predictionResult)
+                    length = 0
+                    tmplist = []
+                    for lines in f:
+                        values = lines.split(",")
+
+                    y_val = []
+                    #x_val = []
+                    for val in values:
+                        print val
+                        if val == "":
+                            continue
+                        y_val.append(float(val) / 100)
+                        #x_val.append(inc)
+                        #inc = inc + batch
+
+                    auc_CNN = trapz(y_val, dx=10)
+                    plt.plot(x_val,y_val, '-r', marker='o', label='CNN, AUC:' + str(auc_CNN)[:4],
+                             linewidth=2.0)
+
+                    #plt.plot(x_val, y_val, '-r', marker='o', label='CNN',linewidth=2.0)
+
+
+                         #plt.plot(x_labels_set, protocol_result['SAL'], '-r', marker='o', label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
                 #plt.plot(x_labels_set, protocol_result['SPL'], '-g', marker='D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
 
 
@@ -86,9 +116,9 @@ for sample in sampling_set:
                 plt.legend(loc=1)
 
                 plt.xlabel('Training Size', size=16)
-                plt.xticks([0,1000,2000,3000,4000,5000])
+                plt.xticks([seed,1000,2000,3000,4000,5000])
 
-                plt.ylim([0.5, 1])
+                plt.ylim([0.45, 1])
                 #plt.yticks([0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
                 #param = "($\\alpha$ = " + str(alpha_param) + ", $\lambda$ = " + str(lambda_param) + ")"

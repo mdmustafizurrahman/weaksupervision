@@ -66,7 +66,7 @@ print('Shape of label tensor:', labels.shape)
 print "type(data.shape[0]:)", type(data.shape)
 
 indices = np.arange(data.shape[0])
-np.random.shuffle(indices)
+#np.random.shuffle(indices)
 data = data[indices]
 labels = labels[indices]
 nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
@@ -85,13 +85,13 @@ print "type(X_train):", type(X_train)
 print "Shape: X-train:", X_train.shape
 
 
-exit(1)
 
 print('Number of positive and negative reviews in traing and validation set ')
 print y_train.sum(axis=0)
 print y_val.sum(axis=0)
 
-GLOVE_DIR = "/home/nahid/Downloads/glove.6B"
+GLOVE_DIR = "/media/nahid/Windows8_OS/glove.6B"
+
 embeddings_index = {}
 f = open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt'))
 for line in f:
@@ -138,6 +138,8 @@ model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
           nb_epoch=10, batch_size=128)
 
+
+model.save('my_model.h5')
 
 '''
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))

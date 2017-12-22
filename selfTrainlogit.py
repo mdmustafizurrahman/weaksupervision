@@ -25,27 +25,27 @@ class relevance(object):
         return -cmp(self.priority, other.priority)
 
 
-'''
 active_sampling = True
 number_of_replica = 10
 seed_size = 100
 increment_size = 50
-'''
 
+
+'''
 active_sampling = True if sys.argv[1] == "True" else False
 number_of_replica = int(sys.argv[2])
 seed_size = int(sys.argv[3])
 increment_size = int(sys.argv[4])
-
+'''
 print active_sampling, str(number_of_replica), str(seed_size), str(increment_size)
 
 
 classifier_type = 1
 
 classifier_name = "LR"
-pre_loaded = True
+pre_loaded = False
 sampling_type = ""
-base_address = "/media/nahid/Windows8_OS/data2/"
+base_address = "/media/nahid/Windows8_OS/coTrain_Large/data_logit/"
 result_address = base_address + "result/"
 
 os.environ['KERAS_BACKEND']='theano'
@@ -98,8 +98,8 @@ if pre_loaded == False:
     print data.shape
 
     indices = np.arange(data.shape[0])
-    np.random.seed(seed=100)
-    np.random.shuffle(indices)
+    #np.random.seed(seed=100)
+    #np.random.shuffle(indices)
     data = data[indices]
     print type(indices)
     label = []
@@ -108,14 +108,16 @@ if pre_loaded == False:
 
     nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
 
-    #x_train = data[:-nb_validation_samples]
-    #y_train = label[:-nb_validation_samples]
+    x_train = data[:-nb_validation_samples]
+    y_train = label[:-nb_validation_samples]
+
+
     x_val = data[-nb_validation_samples:]
     y_val = label[-nb_validation_samples:]
 
     # loading and using 20,000 training is not helping so loading only 5,000
-    x_train = data[:5000]
-    y_train = label[:5000]
+    x_train = data[:10000]
+    y_train = label[:10000]
 
     output = open(base_address+"x_train.txt", 'wb')
     pickle.dump(x_train, output)
@@ -133,6 +135,7 @@ if pre_loaded == False:
     pickle.dump(y_val, output)
     output.close()
 
+    exit(0)
 
 
 else:
@@ -140,6 +143,8 @@ else:
     start_time = time.time()
     input = open(base_address+"x_train.txt", 'rb')
     x_train = pickle.load(input)
+    x_train = x_train[:2000]
+    print "len(x_train)", len(x_train)
     print("--- %s seconds ---" % (time.time() - start_time))
 
     input.close()

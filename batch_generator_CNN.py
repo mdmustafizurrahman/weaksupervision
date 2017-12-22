@@ -1,5 +1,5 @@
 seed_set = [100, 200, 300, 400, 500]
-batch_set = [100, 500]
+batch_set = [100]
 replica_set = [1, 10]
 sampling_set = [True]
 

@@ -30,6 +30,7 @@ MAX_SEQUENCE_LENGTH = 1000
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
+GLOVE_DIR = "/media/nahid/Windows8_OS/glove.6B"
 
 
 def clean_str(string):
@@ -111,7 +112,7 @@ print('Number of positive and negative reviews in traing and validation set ')
 print y_train.sum(axis=0)
 print y_val.sum(axis=0)
 
-GLOVE_DIR = "/home/nahid/Downloads/glove.6B"
+
 embeddings_index = {}
 f = open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt'))
 for line in f:
@@ -155,8 +156,19 @@ model.compile(loss='categorical_crossentropy',
 
 print("model fitting - simplified convolutional neural network")
 model.summary()
-model.fit(X_train, Y_train, validation_data=(x_val, y_val),
-          nb_epoch=5, batch_size=128)
+
+#model.fit(X_train, Y_train, validation_data=(x_val, y_val),nb_epoch=5, batch_size=128)
+
+# first train on strong label
+model.fit(x_train, y_train, validation_data=(x_val, y_val),
+          nb_epoch=1, batch_size=128)
+
+
+print "Train on Weak Label"
+# then train on weak label
+model.fit(x_weak_train, y_weak_train, validation_data=(x_val, y_val),
+          nb_epoch=1, batch_size=128)
+
 
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
 for word, i in word_index.items():
