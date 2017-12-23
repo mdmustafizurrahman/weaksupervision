@@ -29,21 +29,21 @@ import time
 from copy import deepcopy
 from sklearn.linear_model import LogisticRegression
 
-'''
+
 active_sampling = True
 number_of_replica = 1
 seed_size = 100
 increment_size = 100
-random_seed = 100
+random_seed = 0
+
+
 '''
-
-
 active_sampling = True if sys.argv[1] == "True" else False
 number_of_replica = int(sys.argv[2])
 seed_size = int(sys.argv[3])
 increment_size = int(sys.argv[4])
 random_seed = int(sys.argv[5])
-
+'''
 print active_sampling, str(number_of_replica), str(seed_size), str(increment_size)
 
 
@@ -165,8 +165,10 @@ else:
     print "loading data for CNN format"
     base_address = "/media/nahid/Windows8_OS/coTrain_Large/data_CNN/"
     indices = np.arange(5000)
-    np.random.seed(seed=random_seed)
-    np.random.shuffle(indices)
+
+    if random_seed != 0:
+        np.random.seed(seed=random_seed)
+        np.random.shuffle(indices)
 
     start_time = time.time()
     input = open(base_address + "x_train.txt", 'rb')
@@ -251,7 +253,24 @@ y_train_logit_seed = y_train_logit[:seed_size]
 model = LogisticRegression()
 model.fit(x_train_logit_seed, y_train_logit_seed)
 
+x_train_weight = []
+x_train_weight_incremental = []
+for ind in xrange(0,seed_size):
+    x_train_weight.append(1.0)
+    x_train_weight_incremental.append(1.0)
+
+
+
 y_pred_logit = model.predict(x_train_logit[seed_size:])
+
+
+# taking probabity
+y_pred_prob = model.predict_proba(x_train_logit[seed_size:])
+
+for confidence_class in y_pred_prob:
+    confidence_index = argmax(confidence_class)
+    x_train_weight.append(confidence_class[confidence_index])
+
 y_pred_logit_val = model.predict(x_val_logit)
 
 s = ""
@@ -331,6 +350,7 @@ for replicate in xrange(0, number_of_replica - 1):
     for index in xrange(0, initial_len):
         x_train_incremental.append(x_train_incremental[index])
         y_train_incremental.append(y_train_incremental[index])
+        x_train_weight_incremental.append(x_train_weight_incremental[index])
 
 current_size = initial_len
 
@@ -426,11 +446,12 @@ while current_size <= len(y_train) - increment_size:
             # co train
             y_train_incremental.append(y_train[index])
             x_train_incremental.append(x_train[index])
+            x_train_weight_incremental.append(x_train_weight[index])
             x_train_list.append(index)
             counter = counter + 1
 
 
-    model.fit(x_train_incremental, y_train_incremental, epochs=NUMBER_OF_EPOCHS, batch_size=128)
+    model.fit(x_train_incremental, y_train_incremental,sample_weight=np.asarray(x_train_weight_incremental), epochs=NUMBER_OF_EPOCHS, batch_size=128)
     current_size = current_size + increment_size
 
 

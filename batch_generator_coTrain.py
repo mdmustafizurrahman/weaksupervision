@@ -1,11 +1,11 @@
 #seed_set = [100, 200, 300, 400, 500]
-seed_set = [100]
+seed_set = [100, 300, 500, 700, 1000]
 batch_set = [100]
 replica_set = [1]
-random_seed_set = [100, 1000, 10000, 100000]
+random_seed_set = [0]
 sampling_set = [True]
 
-filename1 = '/media/nahid/Windows8_OS/coTrain_Random/batch_command_CNN.sh'
+filename1 = '/media/nahid/Windows8_OS/coTrain_Large/batch_command_CNN.sh'
 shellcommand = '#!/bin/sh\n'
 s=''
 
@@ -39,7 +39,7 @@ for sample in sampling_set:
 
 
                     s = tmp + s + "\n\n"
-                    filname = '/media/nahid/Windows8_OS/coTrain_Random/activeCoTrainJob'+ str(variation)
+                    filname = '/media/nahid/Windows8_OS/coTrain_Large/activeCoTrainJob'+ str(variation)
                     text_file = open(filname, "w")
                     text_file.write(s)
                     text_file.close()
